@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --white-color: #EDEDED;
+    --landing-gradient: #1E1E2C, #5D3F6E, #8A4C93;
+    --header-gradient: #1E1E2C, #1E1E2C, #1E1E2C, transparent;
+    --landing-button-color: transparent;
+    --landing-button-text-hover-color: #4B0082;
+    --background-color: #1E1E2C;
+    --text-color: #A0A0B2;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.toggletheme{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 15px;
+    z-index: 1;
+}
+
+.button{
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: var(--landing-button-color);
+    border: solid 2px var(--text-color);
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+    cursor: pointer;
+}
+
+.button:hover{
+    color: var(--white-color);
+    border: solid 2px var(--landing-button-color);
+}
+
+.link{
+    color: var(--white-color);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.link:hover{
+    color: var(--white-color);
+}
+
+.logo{
+    border-radius: 15%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px var(--white-color);
+}
+
+body{
+    background-color: var(--background-color);
+    color: var(--white-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Courier Prime', sans-serif;
+}
+
+.landing{
+    background: linear-gradient(0deg, var(--landing-gradient));
+    height: 100vh;
+    width: 100%;
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.landing p{
+    margin: 15px;
+}
+
+.landing a{
+    margin: 15px;
+}
+
+header{
+    background: linear-gradient(var(--header-gradient));
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+}
+
+.headercontent {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+header .logo{
+    width: 100px;
+    height: 100px;
+    margin: 0px;
+}
+
+header .logo img{
+    width: 185px;
+    height: auto;
+}
+
+header nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav ul li{
+    margin: 10px;
+    list-style: none;
+}
+
+header .headercontent i{
+    display: none;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+main .section {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 50px 0px;
+    box-sizing: border-box;
+    border-top: solid 1px var(--text-color);
+}
+
+main .section .title{
+    margin: 0px 0px 50px 0px;
+}
+
+main .me .logo{
+    min-width: 350px;
+    max-width: 350px;
+    height: 350px;
+    margin: 10px;
+}
+
+main .me .content{
+    margin: 0px 0px 0px 50px;
+}
+
+
+
+main .me .content p{
+    color: var(--text-color);
+}
+
+main .knowledge{
+    display: flex;
+    flex-direction: column;
+}
+
+main .knowledge .cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    width: 100%;
+}
+
+main .knowledge .cards .knowledgecard{
+    text-align: center;
+    box-shadow: var(--text-color);
+    margin: 35px;
+}
+
+main .knowledge .cards .knowledgecard p{
+    margin: 15px;
+    color: var(--text-color);
+}
+
+main .knowledge .cards .knowledgecard i{
+    font-size: 50px;
+    color: var(--text-color);
+}
+
+main .knowledge .cards .knowledgecard:nth-last-child(1) {
+    grid-column: 2 / 3;
+}
+
+main .skills{
+    display: flex;
+    flex-direction: column;
+}
+
+main .skills .cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+main .skills .cards .skillcard{
+    text-align: center;
+    box-shadow: var(--text-color);
+    margin: 35px;
+    width: 33%;
+}
+
+main .skills .cards .skillcard p{
+    margin: 15px;
+    color: var(--text-color);
+}
+
+main .skills .cards .skillcard i{
+    font-size: 50px;
+    color: var(--text-color);
+}
+
+main .projects{
+    display: flex;
+    flex-direction: column;
+}
+
+main .projects .cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+main .projects .cards .projectcard{
+    text-align: center;
+    box-shadow: var(--text-color);
+    margin: 35px;
+    width: 33%;
+}
+
+main .projects .cards .projectcard p{
+    margin: 15px;
+    color: var(--text-color);
+}
+
+main .projects .cards .projectcard iframe{
+    border-radius: 15px;
+    width: 100%;
+    border: solid 1px var(--text-color);
+    margin: 0px;
+    height: 200px;
+}
+
+main .galery{
+    display: flex;
+    flex-direction: column;
+}
+
+main .galery .cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+
+main .galery .cards .projectcard{
+    text-align: center;
+    box-shadow: var(--text-color);
+    margin: 35px;
+    width: auto;
+}
+
+main .galery .cards .projectcard p{
+    margin: 15px;
+    color: var(--text-color);
+}
+
+main .galery .cards .projectcard .images{
+    border-radius: 15px;
+    width: 100%;
+    border: solid 1px var(--text-color);
+    margin: 0px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .galery .cards .projectcard .images .galeryimage{
+    margin: 15px;
+    border-radius: 15px;
+    width: auto;
+    height: 200px;
+}
+
+main .galery .seemore{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+main .galery .seemore i{
+    color: transparent;
+    margin-top: -17px;
+    transition: all 0.3s ease;
+}
+
+main .galery .seemore:hover i{
+    color: var(--white-color);
+    margin: 0px;
+}
+
+main .contact{
+    display: flex;
+    flex-direction: column;
+}
+
+main .contact .title{
+    text-align: center;
+}
+
+main .contact .title p{
+    color: var(--text-color);
+}
+
+main .contact .cards{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-around;
+    width: 100%;
+}
+
+main .contact .cards .contactinfo{
+    display: flex;
+    margin: 15px;
+}
+
+main .contact .cards .contactinfo i{
+    font-size: 25px;
+    margin: 0px 15px;
+}
+
+@media (max-width: 760px){
+    main .me{
+        flex-direction: column;
+    }
+
+    main .me .content{
+        width: auto;
+        padding-right: 15px;
+    }
+
+    main .me .content h1{
+        width: auto;
+        margin: 15px 0px -15px 0px;
+        text-align: center;
+    }
+
+    main .galery .cards .projectcard .images .galeryimage {
+        height: 150px;
+    }
+
+    main .skills .cards{
+        flex-direction: column;
+    }
+
+    main .skills .cards .skillcard{
+        width: auto;
+    }
+    
+    main .contact .cards{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    main .contact .cards .contactinfo:nth-last-child(1){
+        justify-content: center;
+    }
+
+    main .contact .cards .contactinfo:nth-last-child(2){
+        display: none;
+    }
+}
+
+@media (max-width: 600px){
+    header{
+        display: none;
+    }
+
+    main .knowledge .cards{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main .knowledge .cards .knowledgecard:nth-last-child(1) {
+        grid-column: 1 / 3;
+    }
+
+    main .projects .cards{
+        flex-direction: column;
+    }
+
+    main .projects .cards .projectcard{
+        width: auto;
+    }
+
+    main .galery .cards .projectcard .images .galeryimage{
+        height: 75px;
+    }
+}
