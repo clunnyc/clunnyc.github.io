@@ -1,48 +1,88 @@
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function (e) {
-        const targetId = this.getAttribute("href").substring(1);
-        const targetElement = document.getElementById(targetId);
-
-        if (targetId === "header") {
-            
-            return;
-        }
-
-        if (targetElement) {
-            e.preventDefault();
-            const offsetPosition = targetElement.offsetTop - 124;
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth",
-            });
-        }
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleThemeButton = document.getElementById('toggletheme');
+    const themeIcon = document.getElementById('themeicon');
+    let isDarkTheme = true;
+  
+    toggleThemeButton.addEventListener('click', () => {
+      document.body.classList.toggle('light-theme');
+      isDarkTheme = !isDarkTheme;
+      themeIcon.className = isDarkTheme ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
     });
-});
+  
+    const buttons = document.querySelectorAll('.button');
+  
+    buttons.forEach((button) => {
+      button.addEventListener('mouseenter', () => {
+        button.style.transform = 'scale(1.1)';
+      });
+  
+      button.addEventListener('mouseleave', () => {
+        button.style.transform = 'scale(1)';
+      });
+  
+      button.addEventListener('mousedown', () => {
+        button.style.transform = 'scale(0.95)';
+      });
+  
+      button.addEventListener('mouseup', () => {
+        button.style.transform = 'scale(1.1)';
+      });
+    });
 
-const root = document.documentElement;
-const toggleButton = document.getElementById('toggletheme');
-const themeIcon = document.getElementById('themeicon');
+    const knowledgeCards = document.querySelectorAll('.knowledgecard');
+  
+    knowledgeCards.forEach((card) => {
+      card.addEventListener('mouseenter', () => {
+        card.style.boxShadow = '0 0 15px rgba(255, 255, 255, 0.8)';
+        card.style.transform = 'translateY(-5px)';
+      });
+  
+      card.addEventListener('mouseleave', () => {
+        card.style.boxShadow = 'none';
+        card.style.transform = 'translateY(0)';
+      });
+    });
+    
+    const projectCards = document.querySelectorAll('.projectcard');
+  
+    projectCards.forEach((card) => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'rotateY(10deg)';
+        card.style.transition = 'transform 0.3s ease';
+      });
+  
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'rotateY(0)';
+      });
+    });
+    
+    const contactLinks = document.querySelectorAll('.contactinfo a');
+  
+    contactLinks.forEach((link) => {
+      link.addEventListener('mouseenter', () => {
+        link.style.color = '#FF4500';
+        link.style.transition = 'color 0.3s ease';
+      });
+  
+      link.addEventListener('mouseleave', () => {
+        link.style.color = '';
+      });
+    });
+    const navLinks = document.querySelectorAll('nav a, .button');
+  
+    navLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+  
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  });
+  
+  document.body.classList.toggle('light-theme');
 
-toggleButton.addEventListener('click', () => {
-    const isDarkMode = document.body.classList.toggle('light-theme');
-
-    if (isDarkMode) {
-        root.style.setProperty('--white-color', '#093474');
-        root.style.setProperty('--landing-gradient', '#E3F2FD, #BBDEFB, #90CAF9');
-        root.style.setProperty('--header-gradient', '#E3F2FD, #E3F2FD, #E3F2FD, transparent');
-        root.style.setProperty('--landing-button-color', 'transparent');
-        root.style.setProperty('--landing-button-text-hover-color', '#1565C0');
-        root.style.setProperty('--background-color', '#E3F2FD');
-        root.style.setProperty('--text-color', '#546E7A');
-        themeIcon.classList.replace('fa-sun', 'fa-moon');
-    } else {
-        root.style.setProperty('--white-color', '#EDEDED');
-        root.style.setProperty('--landing-gradient', '#1E1E2C, #5D3F6E, #8A4C93');
-        root.style.setProperty('--header-gradient', '#1E1E2C, #1E1E2C, #1E1E2C, transparent');
-        root.style.setProperty('--landing-button-color', 'transparent');
-        root.style.setProperty('--landing-button-text-hover-color', '#4B0082');
-        root.style.setProperty('--background-color', '#1E1E2C');
-        root.style.setProperty('--text-color', '#A0A0B2');
-        themeIcon.classList.replace('fa-moon', 'fa-sun')
-    }
-});
+  

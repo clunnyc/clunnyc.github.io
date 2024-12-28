@@ -431,3 +431,39 @@ main .contact .cards .contactinfo i{
         height: 75px;
     }
 }
+
+button, .button {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover, .button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+}
+
+a {
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1565C0;
+}
+
+body.light-theme {
+    --white-color: #1E1E2C;
+    --landing-gradient: #EDEDED, #D8BFD8, #FFC0CB;
+    --header-gradient: #EDEDED, #EDEDED, #EDEDED, transparent;
+    --landing-button-color: #FFC0CB;
+    --landing-button-text-hover-color: #1E1E2C;
+    --background-color: #FFFFFF;
+    --text-color: #000000;
+}
+
+body.light-theme .button {
+    border-color: var(--text-color);
+}
+
+body.light-theme .button:hover {
+    border-color: var(--white-color);
+}
+
